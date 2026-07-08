@@ -1,32 +1,27 @@
-# MainPlotador
+# Function Graph Plotter 📈
 
-MainPlotador is a desktop application built with C++ and the Qt Framework designed to plot, visualize, and manage mathematical functions interactively.
+This project is a function graph plotter program developed using **C++** and the **Qt** graphical interface library. The application was developed to fulfill the project specifications for a course taught by Professor Adelardo Adelino Dantas de Medeiros in the Department of Computer Engineering and Automation (DCA) at the Technology Center of the Federal University of Rio Grande do Norte (UFRN).
 
 ## 🚀 Features
 
-- **Dynamic Function Plotting**: Add multiple mathematical functions to a single graphical view. Each function is assigned a specific color.
-- **Viewport Control**: Interactively adjust the minimum, maximum, and step (exponential) limits for both the X and Y axes using dedicated spin boxes.
-- **Smart Axis Boundaries**: The application automatically prevents invalid viewport states (e.g., preventing the minimum axis value from exceeding or equaling the maximum value).
-- **Function Table Manager**: A dynamic table displays all currently plotted functions alongside a visual color swatch (`QPixmap`) for easy identification.
-- **Interactive Coordinates**: Clicking anywhere on the plotted graph instantly displays the exact (X, Y) coordinates in the application's status bar.
-- **Error Handling**: Built-in exception catching alerts the user via a pop-up dialog (`QMessageBox`) if an invalid mathematical expression is entered.
-- **Quick Clear**: Easily wipe the canvas and reset the function list with a single click.
+- **Function Plotting**: The program is capable of plotting and visualizing multiple mathematical functions using the provided `Evaluator` class to evaluate the expressions.
+- **Color Control**: When adding a new function through the plotting menu, the user can select the curve color from the following options: Blue, Red, Green, or Black.
+- **Graph Management**: The main window features a visual table (`QTableWidget`) that displays all currently plotted functions and their corresponding colors.
+- **Axis Adjustment**: The X and Y axis limits (minimum, maximum, and exponential values) can be dynamically adjusted by the user through components in the interface.
+- **Automatic Resizing**: The graph image dynamically and automatically adjusts and redraws itself whenever the main window's size is modified by the user.
+- **Coordinate Inspection**: The user can click with the mouse anywhere on the graph area, and the exact coordinates of that point (X and Y) will be displayed in the bottom status bar.
+- **Error Handling**: If the user attempts to enter an invalid mathematical expression, the application intercepts the error and displays an alert window reporting the failure.
+- **Quick Clear**: A "Clear" command allows removing all curves at once and resetting the visualization interface.
 
-## 🛠️ Technologies & Tools
+## 🛠️ Structure and Main Classes
 
-- **Language**: C++
-- **Framework**: Qt (QtWidgets, GUI, Core)
-- **Key Components**: `QMainWindow`, `QTableWidget`, `QSpinBox`, `QLabel`, `QMessageBox`, `Grafico`, `LehFuncao`.
+- **`MainPlotador`**: This is the class corresponding to the main application window (inheriting from `QMainWindow`), which acts by interconnecting the menus, layout, and system interactions.
+- **`LehFuncao`**: This is the auxiliary dialog window class that contains text boxes and buttons to register the newly entered mathematical expressions.
+- **`Grafico`**: A customized class that inherits the properties of a standard `QLabel`. This class houses the graph data management and overrides system events (`resizeEvent` and `mouseReleaseEvent`) to allow for resizing and interactive clicking.
+- **`Evaluator`**: The class used to validate and calculate the value of the mathematical function to be plotted.
 
-## 📁 Project Structure
+## 💻 Technologies
 
-- **`MainPlotador`**: The main application window (`QMainWindow`) that manages the user interface, the graph widget, and the function input dialog.
-- **`Grafico`**: A custom widget responsible for rendering the mathematical functions and handling click events.
-- **`LehFuncao`**: A secondary dialog/window where the user inputs the mathematical expression to be plotted.
-
-## ⚙️ How to Run
-
-1. Ensure you have the **Qt Framework** and **Qt Creator** installed on your machine.
-2. Open the `.pro` (or `CMakeLists.txt`) file in Qt Creator.
-3. Configure the project with your preferred C++ compiler kit (e.g., MinGW, MSVC, GCC).
-4. Build and Run the project (`Ctrl+R`).
+- **Programming Language**: C++
+- **UI Framework**: Qt
+- **Environments**: Qt Creator and Qt Designer
