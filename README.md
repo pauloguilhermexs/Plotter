@@ -1,6 +1,6 @@
 # Function Graph Plotter 📈
 
-This project is a function graph plotter program developed using **C++** and the **Qt** graphical interface library. The application was developed to fulfill the project specifications for a course taught by Professor Adelardo Adelino Dantas de Medeiros in the Department of Computer Engineering and Automation (DCA) at the Technology Center of the Federal University of Rio Grande do Norte (UFRN).
+This project is a function graph plotter program developed using **C++** and the **Qt** graphical interface library. 
 
 ## 🚀 Features
 
